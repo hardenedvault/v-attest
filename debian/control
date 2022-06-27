@@ -1,0 +1,27 @@
+Source: v-attest
+Section: admin
+Priority: optional
+Maintainer: Ivan Kuzneczov <ivan.kuzneczov@hardenedvault.net>
+Build-Depends: debhelper-compat (= 13), tpm2-tools, swtpm
+Standards-Version: 4.4.1
+#Homepage: <>
+
+Package: attest-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bash, xxd, systemd, tpm2-tools
+Suggests: curl
+Description: Tools to implement attestation originated from v-attest
+ This package provides the basic tools perform attestation.
+
+Package: attest-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, systemd, attest-tools, swtpm2-daemon, python3-yaml
+Description: Tools to implement attestation originated from v-attest
+ This package provides the server side verifying attestation and
+ providing unlock keys.
+
+Package: attest-enroll
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, attest-tools, swtpm
+Description: Tools to generate enrollment data originated from v-attest
+ This package provides the scripts to generate enrollment data.

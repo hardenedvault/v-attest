@@ -1,0 +1,9 @@
+safeboot for Debian
+------------------
+
+Currently the `sbsign` will segfault when using pkcs11 hardware
+keys and the `efitools` package doesn't have the `--engine` option
+to deal with pkcs11 keys.
+
+ -- Trammell Hudson <hudson@trmm.net>  Sat, 09 May 2020 13:20:05 +0200
+

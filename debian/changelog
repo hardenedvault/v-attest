@@ -1,0 +1,72 @@
+v-attest (0.8) unstable; urgency=medium
+
+  * Rename `safeboot` to `v-attest`
+  * Remove unused scripts
+
+ -- Ivan Kuzneczov <ivan.kuzneczov@hardenedvault.net>  Thu, 2 Jun 2022 06:10:20 +0300
+
+safeboot (0.8) unstable; urgency=medium
+
+  * `tpm2-attest` and `attest-server` to perform attestations
+  * TPM2 emulator `swtpm` built as part of emulation environment
+  * EK certificates are now optional in quotes
+  * More `safeboot` helper functions: `sign`, `unify`, `install-kernel`
+
+ -- Trammell Hudson <hudson@unicycle>  Sun, 23 Aug 2020 18:12:58 +0200
+
+safeboot (0.7) unstable; urgency=medium
+
+  * Added signed PCRs
+  * Added TPM counters for rollback protection
+  * safeboot.conf is now included in the initrd, fewer params on command line
+  * Recovery boot can now sign and hash root filesystem
+  * Helpers for recovery boot to unlock cryptdisk, mount filesystems, etc
+  * No more perl in /sbin/safeboot
+
+ -- Trammell Hudson <hudson@unicycle>  Sun, 23 Aug 2020 18:12:58 +0200
+
+safeboot (0.6) unstable; urgency=medium
+
+  * Lots of documentation updates
+  * Documentation updated to markdown format
+  * safeboot and safeboot-tpm-unseal pass shellcheck
+  * 'remount ro' now provides help finding processes with locks
+  * 'remount ro' handles block devices that are already read-only
+  * 'sign-kernel' tries three times
+
+ -- Trammell Hudson <hudson@unicycle>  Wed, 20 May 2020 23:07:27 +0200
+
+safeboot (0.5) unstable; urgency=medium
+
+  * Added tpm2-totp to attest that the firmware is unmodified
+  * Fixed many small bugs
+
+ -- Trammell Hudson <hudson@unicycle>  Thu, 14 May 2020 13:55:15 +0200
+
+safeboot (0.4) unstable; urgency=medium
+
+  * Reworked install instructions
+  * safeboot sip-init works (with lots of caveats)
+
+ -- Trammell Hudson <hudson@tank>  Mon, 11 May 2020 17:03:40 +0200
+
+safeboot (0.3-1ubuntu1) unstable; urgency=medium
+
+  * Added /etc/safeboot/safeboot.conf
+  * Support openssl x509 keys
+  * Real read-only mode for recovery
+
+ -- Trammell Hudson <hudson@unicycle>  Mon, 11 May 2020 13:04:39 +0200
+
+safeboot (0.2-1) unstable; urgency=medium
+
+  * Ran through instructions, worked on fresh 20.04 install
+  * Setup `mkdocs` website with documentation.
+
+ -- Trammell Hudson <hudson@trmm.net>  Sun, 10 May 2020 23:20:05 +0200
+
+safeboot (0.1-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Trammell Hudson <hudson@trmm.net>  Sat, 09 May 2020 13:20:05 +0200

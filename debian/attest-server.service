@@ -1,0 +1,13 @@
+[Unit]
+Description=Attestation server
+After=network.target
+
+[Service]
+Environment="VAR_PATH=/var/lib/attest-server" "RUN_PATH=/run/v-attest-server"
+User=attest-server
+Group=tss
+WorkingDirectory=/run/v-attest-server
+ExecStart=attest-server
+
+[Install]
+WantedBy=multi-user.target

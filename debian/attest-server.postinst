@@ -1,0 +1,31 @@
+#!/bin/sh
+# postinst script
+
+set -e
+
+VAR_PATH=/var/lib/attest-server
+
+# Source the debconf shell library.
+. /usr/share/debconf/confmodule
+
+case "$1" in
+    configure)
+        if ! getent passwd attest-server >/dev/null; then
+            adduser --quiet --system --ingroup tss --home ${VAR_PATH} attest-server
+        fi
+
+	chown -hR attest-server:tss ${VAR_PATH} 2>/dev/null || true
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,2 @@
+sbin/attest-server		usr/sbin/
+sbin/attest-verify		usr/sbin/

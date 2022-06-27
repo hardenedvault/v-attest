@@ -1,0 +1,15 @@
+# shell scripts in the tree
+sbin/tpm2-attest		usr/bin/
+sbin/tpm2-pcr-validate		usr/bin/
+sbin/tpm2-recv			usr/bin/
+sbin/tpm2-send			usr/bin/
+functions.sh			usr/lib/v-attest/
+env.sh				usr/lib/v-attest/
+
+# configuration files and helper functions
+v-attest.conf			etc/v-attest/
+
+# TPM certs and a script to refresh them
+tpm-certs.txt			etc/v-attest/
+refresh-certs			etc/v-attest/
+certs/*				etc/v-attest/certs/

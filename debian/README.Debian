@@ -1,0 +1,6 @@
+v-attest for Debian
+------------------
+
+Rename `safeboot` to `v-attest` and  remove unused scripts
+
+ -- Ivan Kuzneczov <ivan.kuzneczov@hardenedvault.net>  Thu, 2 Jun 2022 06:10:20 +0300

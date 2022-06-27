@@ -1,0 +1,37 @@
+#!/bin/sh
+# postinst script
+
+set -e
+
+VAR_PATH=/var/lib/attest-server
+
+# Source the debconf shell library.
+. /usr/share/debconf/confmodule
+
+case "$1" in
+    purge)
+	if [ -d "$VAR_PATH" ]; then
+            rm -rf "$VAR_PATH"
+	fi
+	if getent passwd attest-server >/dev/null; then
+            if [ -x "`which deluser 2>/dev/null`" ]; then
+		deluser --system attest-server
+            else
+		echo >&2 "Not removing \`attest-server' system account" \
+			 "because deluser command was not found."
+            fi
+	fi
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+    ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#
+
+exit 0
